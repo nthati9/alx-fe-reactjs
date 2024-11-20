@@ -1,1 +1,35 @@
+import create from 'zustand';
+
+const useRecipeStore = create((set) => ({
+  recipes: [
+    {
+      id: 1,
+      title: 'Creamy Garlic Seafood Pasta',
+      description: 'A delicious and creamy pasta dish with shrimp, calamari, and mussels in a garlic butter sauce.',
+      ingredients: [
+        'Seafood (shrimp, calamari, squid heads, mussels, scallops, clams)',
+        'Butter',
+        'Fresh garlic',
+        'Lemon juice',
+        'White wine',
+        'Cream',
+        'Parsley',
+        'Salt and pepper',
+        'Chilli flakes (optional)',
+        'Pasta (long pasta or your choice)'
+      ],
+      instructions: [
+        'In a large pan, add a splash of oil and heat it up. Season the seafood with salt and pepper and cook in batches until golden brown. Shrimp should take no more than a minute per side, calamari and mussels a few minutes.',
+        'Remove seafood from the pan and set aside. In the same pan, melt butter and add garlic and chilli flakes. Cook until fragrant.',
+        'Pour in lemon juice and white wine, bring to a simmer, and reduce by half. Then add cream and allow to come to a simmer for 5 minutes or until the sauce coats the back of a spoon.',
+        'Add the seafood back into the pan with any juices and parsley. Stir to combine.',
+        'Toss the sauce with cooked pasta and a splash of pasta cooking water, then serve sprinkled with parsley.'
+      ]
+    }
+  ],
+  addRecipe: (newRecipe) => set((state) => ({ recipes: [...state.recipes, newRecipe] })),
+  setRecipes: (recipes) => set({ recipes }),
+}));
+
+export { useRecipeStore };
 
