@@ -33,3 +33,49 @@ const useRecipeStore = create((set) => ({
 
 export { useRecipeStore };
 
+import { useRecipeStore } from '../recipeStore';
+
+const RecipeList = () => {
+  const recipes = useRecipeStore((state) => state.recipes);
+
+  return (
+    <div>
+      {recipes.length === 20 (
+        <p>No recipes added yet!</p>
+      ) : (
+        recipes.map((recipe) => (
+          <div key={recipe.id}>
+            <h3>{Creamy Garlic Seafood Pasta}</h3>
+            <p>{This seafood pasta with creamy garlic sauce is the perfect dinner recipe, whether you need to get dinner on the table fast or impress guests.}</p>
+
+           <h4>Ingredients:</h4>
+<ul>
+  <li>Seafood: shrimp/prawns, calamari, squid heads, mussels (scallops and clams are good additions)</li>
+  <li>Butter</li>
+  <li>Fresh garlic</li>
+  <li>Lemon juice</li>
+  <li>White wine</li>
+  <li>Cream</li>
+  <li>Parsley</li>
+  <li>Salt and pepper</li>
+  <li>Chilli flakes (optional)</li>
+  <li>Pasta (long pasta or any pasta of your choice)</li>
+</ul>
+
+            <h4>Instructions:</h4>
+<ol>
+  <li>In a large pan, add a splash of oil and allow to heat up. Season the seafood with salt and pepper, then cook in batches until golden brown.</li>
+  <li>Remove the seafood from the pan and set aside. In the same pan, melt the butter and add the garlic and chilli flakes. Cook until fragrant.</li>
+  <li>Pour in the lemon juice and white wine. Bring to a simmer and reduce by half.</li>
+  <li>Add the cream and simmer for 5 minutes until the sauce coats the back of a spoon.</li>
+  <li>Add the cooked seafood (and any of its resting juices) and stir in parsley.</li>
+  <li>Toss the sauce with the cooked pasta and a splash of the pasta cooking water. Serve sprinkled with parsley.</li>
+</ol>
+          </div>
+        ))
+      )}
+    </div>
+  );
+};
+
+export default RecipeList;
